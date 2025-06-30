@@ -1,28 +1,17 @@
 package org.grupo.alegal.ControlTareas;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-
     public static void main(String[] args) {
+        Tarea[] tareas = new Tarea[]{
+                new Tarea("Tarea 1", Boolean.FALSE),
+                new Tarea("Tarea 2", Boolean.TRUE)
+        };
 
+        tareas[0].marcarComoCompletada();  // Marcamos como verdadera manualmente.
 
-        // Ejercicio tiendaProductos.
-
-
-        // Ejercicio Tarea.
-//        Tarea[] tareas = new Tarea[] {
-//                new Tarea("Tarea 1", false),
-//                new Tarea("Tarea 2", true)
-//        };
-//    }
-//    public static Tarea buscar(Tarea tarea) {
-//        for(Tarea t : tareas) {
-//            if(tarea.getDescripcion.equals(t.getDesripcion)) {
-//                return t;
-//            }
-//        }
-//        return null;
-//    }
+        for (int i = 0; i < tareas.length; i++) {
+            System.out.println(tareas[i].imprimir());
+        }
     }
 }
+

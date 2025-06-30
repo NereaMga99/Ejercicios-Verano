@@ -4,25 +4,20 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        public static Libro[] libros = new Libro[] {
-                new Libro("Quijote", "Cervantes", false),
-                new Libro("Donde los arboles cantan", "Laura Gallego", true)
+        Libro[] libros = new Libro[] {
+            new Libro("Quijote", "Cervantes", false),
+            new Libro("Donde los arboles cantan", "Laura Gallego", true)
         };
 
-        public static Libro buscar(Libro libro) {
-            Libro resultado = null;
-            for (Libro l : libros) {
-                if (l.setTitulo().equals(libro.getTitulo)) {
-                    resultado = l;
-                }
-            }
-            return resultado;
+        for (int i = 0; i < libros.length; i++) {
+            System.out.println(libros[i].imprimir());
         }
 
-        public static void main (String[] args) {
-            System.out.println("Introduce titulo");
-            String titulo = new Scanner(System.in).next();
-            Libro l = buscar(new libro(titulo, ""));
-        }
+        libros[0].prestar();
+        libros[0].devolver(); // Al devolver el libro deberia de estar en true de nuevo
+        System.out.println(libros[0].imprimir()); // Lo comprobamos con el metodo imprimir especificando el libro
+
+        libros[1].prestar(); // Deberia de pasar a false ya que se ha prestado el libro.
+        System.out.println(libros[1].imprimir()); // Comprobamos su estado.
     }
 }

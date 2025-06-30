@@ -6,6 +6,7 @@ public class Libro {
     private String autor;
     private Boolean disponible;
 
+
     // Constructor.
     public Libro (String titulo, String autor, Boolean disponible) {
         this.titulo = titulo;
@@ -13,13 +14,9 @@ public class Libro {
         this.disponible = disponible;
     }
 
-    public String getTitulo() {
-        return this.titulo;
-    }
-
     // Metodo devolver
     public void devolver() {
-        this.disponible = false;
+        this.disponible = true;
     }
 
     // Metodo prestar.
@@ -29,5 +26,35 @@ public class Libro {
         } else {
             this.disponible = false;
         }
+    }
+
+    // Getter y Setters
+    public String getTitulo() {
+        return this.titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public Boolean getDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(Boolean disponible) {
+        this.disponible = disponible;
+    }
+
+    // metodo imprimir
+    public String imprimir() {
+        return "El libro " + getTitulo() + "del autor " + getAutor() + "esta " + getDisponible();
     }
 }
